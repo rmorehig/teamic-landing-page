@@ -1,42 +1,45 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import styled from "styled-components"
+
+const navItems = ["learn", "about", "integrations"]
+const HeaderWrapper = styled.header`
+  height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
+const Logo = styled(Link)`
+  font-weight: bold;
+  font-size: 24px;
+`
+const Nav = styled.nav``
+
+const NavList = styled.ul`
+  display: flex;
+  justify-content: space-between;
+`
+
+const NavItem = styled(Link)`
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  margin-left: 64px;
+`
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+  <HeaderWrapper>
+    <Logo to="/">{siteTitle}</Logo>
+    <Nav>
+      <NavList>
+        {navItems.map(item => (
+          <NavItem key={item} to={item}>
+            {item}
+          </NavItem>
+        ))}
+      </NavList>
+    </Nav>
+  </HeaderWrapper>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header
