@@ -22,7 +22,7 @@ const H2 = styled.h1`
 const SubHeader = styled.p`
   font-size: 20px;
   line-height: 32px;
-  margin-bottom: 16px;
+  margin-bottom: 56px;
 `
 
 const Feature = () => {

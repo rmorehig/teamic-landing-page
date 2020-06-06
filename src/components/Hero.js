@@ -3,10 +3,13 @@ import styled from "styled-components"
 import { PrimaryButton, OutlineButton } from "./Button"
 
 const HeroWrapper = styled.section`
-  margin: 0 auto;
-  max-width: 600px;
-  text-align: center;
-  padding: 148px 0 320px;
+  position: relative;
+  > div {
+    max-width: 600px;
+    text-align: center;
+    padding: 148px 0 320px;
+    margin: 0 auto;
+  }
 `
 const H1 = styled.h1`
   font-style: normal;
@@ -38,13 +41,15 @@ const HelperText = styled.p`
 const Hero = () => {
   return (
     <HeroWrapper>
-      <H1>Supercharge your team flow</H1>
-      <SubHeader>Unleash the full potential of your company</SubHeader>
-      <Buttons>
-        <PrimaryButton>Try for free</PrimaryButton>
-        <OutlineButton>See pricing</OutlineButton>
-      </Buttons>
-      <HelperText>Fully featured 30 day free trial</HelperText>
+      <div>
+        <H1>Supercharge your team flow</H1>
+        <SubHeader>Unleash the full potential of your company</SubHeader>
+        <Buttons>
+          <PrimaryButton>Try for free</PrimaryButton>
+          <OutlineButton>See pricing</OutlineButton>
+        </Buttons>
+        <HelperText>Fully featured 30 day free trial</HelperText>
+      </div>
     </HeroWrapper>
   )
 }
