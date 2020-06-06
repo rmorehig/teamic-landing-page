@@ -1,13 +1,11 @@
 import React from "react"
-import PropTypes from "prop-types"
+import styled from "styled-components"
+
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./Header"
-import styled from "styled-components"
 import GlobalStyle from "../theme/Global"
-import { maxWidth } from "../theme/sizes"
 
 const LayoutWrapper = styled.div`
-  max-width: ${maxWidth};
   margin: 0 auto;
 `
 const Layout = ({ children }) => {
@@ -28,10 +26,6 @@ const Layout = ({ children }) => {
       <GlobalStyle />
     </LayoutWrapper>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

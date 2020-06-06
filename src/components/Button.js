@@ -1,22 +1,27 @@
 import styled from "styled-components"
-import { fontFamily } from "theme"
+import { fontFamily } from "../theme/typography"
+import { primary, lightGray } from "../theme/colors"
+import { outline } from "../theme/mixins"
 
 export const Button = styled.button`
   font-family: ${fontFamily};
-  font-size: 16px;
   font-weight: 600;
-  border-radius: 6px;
-  padding: 0 35px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 24px;
+  line-height: 32px;
+  border-radius: 8px;
+  padding: 20px 37px;
   transition: all 300ms ease;
   background: none;
   border: none;
   cursor: pointer;
+  outline: none;
 `
 
 export const PrimaryButton = styled(Button)`
-  background-color: ${colors};
-  color: ${white};
+  background-color: ${primary};
+  color: ${lightGray};
+`
+
+export const OutlineButton = styled(Button)`
+  ${outline(3)}
 `

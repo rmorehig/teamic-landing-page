@@ -29,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
   }
   * {
     box-sizing: inherit;
+    margin:0;
   }
   *:before {
     box-sizing: inherit;

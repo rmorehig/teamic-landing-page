@@ -1,10 +1,12 @@
 import React from "react"
 import styled from "styled-components"
-import { PrimaryButton } from "./Button"
+import { PrimaryButton, OutlineButton } from "./Button"
 
 const HeroWrapper = styled.section`
   margin: 0 auto;
   max-width: 600px;
+  text-align: center;
+  padding: 148px 0 320px;
 `
 const H1 = styled.h1`
   font-style: normal;
@@ -21,6 +23,16 @@ const SubHeader = styled.p`
 `
 const Buttons = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0 24px;
+  > button:first-child {
+    margin-right: 21.5px;
+  }
+`
+const HelperText = styled.p`
+  font-size: 14px;
+  line-height: 24px;
 `
 
 const Hero = () => {
@@ -30,8 +42,9 @@ const Hero = () => {
       <SubHeader>Unleash the full potential of your company</SubHeader>
       <Buttons>
         <PrimaryButton>Try for free</PrimaryButton>
-        <PrimaryButton>See pricing</PrimaryButton>
+        <OutlineButton>See pricing</OutlineButton>
       </Buttons>
+      <HelperText>Fully featured 30 day free trial</HelperText>
     </HeroWrapper>
   )
 }
