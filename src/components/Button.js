@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { fontFamily } from "../theme/typography"
-import { primary, lightGray } from "../theme/colors"
+import { primary, lightGray, black, darkPrimary } from "../theme/colors"
 import { outline } from "../theme/mixins"
 
 export const Button = styled.button`
@@ -9,7 +9,7 @@ export const Button = styled.button`
   font-size: 24px;
   line-height: 32px;
   border-radius: 8px;
-  padding: 20px 37px;
+  padding: 16px 32px;
   transition: all 300ms ease;
   background: none;
   border: none;
@@ -20,8 +20,18 @@ export const Button = styled.button`
 export const PrimaryButton = styled(Button)`
   background-color: ${primary};
   color: ${lightGray};
+  ${outline(3, primary)}
+  &:hover {
+    ${outline(3, darkPrimary)}
+    background-color: ${darkPrimary};
+  }
+
 `
 
 export const OutlineButton = styled(Button)`
-  ${outline(3)}
+  ${outline(3, black)}
+  &:hover {
+    background-color: ${black};
+    color: ${lightGray};
+  }
 `

@@ -1,4 +1,6 @@
 export const primary = "#6875F5"
+export const darkPrimary = "#5850ec"
+export const lightPrimary = "#8da2fb"
 export const black = "#000000"
 export const darkGray = "#838383"
 export const gray = "#E5E5E5"
